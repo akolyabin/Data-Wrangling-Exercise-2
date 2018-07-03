@@ -3,7 +3,7 @@ my_df <- read.csv("titanic_original.csv")
 
 # 1: Replacing Missing Values
 summary(my_df)
-my_df$embarked[my_df$embarked == ""] <- my_df$embarked[my_df$embarked == "S"]
+my_df$embarked[my_df$embarked == ""] <- "S"
 
 # 2: Replacing "Age" column NAs with Mean
 # finding mean
@@ -16,7 +16,7 @@ my_df$age[which(is.na(my_df$age))] <- mean(my_df$age, na.rm = T)
 # by outliers.
 
 # 3: Replacing empty slots of "boat" column with NAs
-my_df$boat[my_df$boat == ""] <- my_df$boat[my_df$boat == NA]
+my_df$boat[my_df$boat == ""] <- NA
 
 
 # 4: Adding new column 
